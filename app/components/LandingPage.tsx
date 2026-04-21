@@ -13,8 +13,8 @@ function LogoLink() {
         className="brand-logo"
         src="/camellio-logo.jpg"
         alt="Logo de Camellio"
-        width={120}
-        height={120}
+        width={60}
+        height={60}
         priority
       />
       <span className="brand-copy">
@@ -162,9 +162,11 @@ export function LandingPage({ content }: LandingPageProps) {
                 <span className="section-label" style={{ color: "rgba(255,255,255,0.88)" }}>
                   {content.spotlightTitle}
                 </span>
-                <h2 className="section-title" style={{ color: "#fff" }}>
-                  {content.spotlightBody}
-                </h2>
+                <ul className="spotlight-body-list">
+                  {content.spotlightBodyLines.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </article>
 
               <article className="spotlight-card spotlight-card--soft">

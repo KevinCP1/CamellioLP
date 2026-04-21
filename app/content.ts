@@ -19,7 +19,7 @@ export type LandingContent = {
   testimonialsTitle: string;
   testimonials: Array<{ name: string; role: string; quote: string }>;
   spotlightTitle: string;
-  spotlightBody: string;
+  spotlightBodyLines: string[];
   spotlightPoints: string[];
   faqTitle: string;
   faqs: Array<{ question: string; answer: string }>;
@@ -90,8 +90,11 @@ export const employeeLanding: LandingContent = {
     },
   ],
   spotlightTitle: "Importancia de mostrar tu trabajo",
-  spotlightBody:
-    "Sube fotos reales de tus trabajos y destaca frente a otros técnicos. Los perfiles con imágenes reciben hasta 3 veces más solicitudes.",
+  spotlightBodyLines: [
+    "Sube fotos reales de tus trabajos.",
+    "Destaca frente a otros técnicos.",
+    "Los perfiles con imágenes reciben hasta 3 veces más solicitudes.",
+  ],
   spotlightPoints: [
     "Tú defines tus precios.",
     "Tú eliges tu disponibilidad.",
@@ -179,8 +182,11 @@ export const employerLanding: LandingContent = {
     },
   ],
   spotlightTitle: "Enfocado en tu zona",
-  spotlightBody:
-    "Camellio no es una plataforma masiva sin control. Funciona por territorio, lo que significa técnicos cercanos, respuesta más rápida y mejor conocimiento del área.",
+  spotlightBodyLines: [
+    "Camellio no es una plataforma masiva sin control.",
+    "Funciona por territorio.",
+    "Eso significa técnicos cercanos, respuesta más rápida y mejor conocimiento del área.",
+  ],
   spotlightPoints: [
     "Ver fotos reales de trabajos.",
     "Revisar resultados anteriores.",

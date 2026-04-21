@@ -114,10 +114,12 @@ img {
 }
 
 .brand-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  object-fit: cover;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
   box-shadow: 0 10px 24px rgba(45, 91, 255, 0.24);
 }
 
@@ -386,7 +388,7 @@ img {
   gap: 8px;
   margin-bottom: 12px;
   color: var(--accent-strong);
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -440,7 +442,7 @@ img {
 .faq-item summary {
   margin: 0;
   font-family: var(--font-heading), system-ui, sans-serif;
-  font-size: 1.02rem;
+  font-size: 0.96rem;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
@@ -491,7 +493,7 @@ img {
   display: block;
   margin-bottom: 4px;
   font-family: var(--font-heading), system-ui, sans-serif;
-  font-size: 1rem;
+  font-size: 0.96rem;
   letter-spacing: -0.03em;
 }
 
@@ -634,6 +636,12 @@ img {
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
+.choice-card--center {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
 .choice-card::after {
   content: "";
   position: absolute;
@@ -648,7 +656,7 @@ img {
 .choice-card h2 {
   margin: 0;
   font-family: var(--font-heading), system-ui, sans-serif;
-  font-size: 1.34rem;
+  font-size: 1.24rem;
   letter-spacing: -0.04em;
 }
 
@@ -674,6 +682,38 @@ img {
 
 .choice-action--alternate {
   background: linear-gradient(135deg, #f59e0b, #cc7400);
+}
+
+.spotlight-body-list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #fff;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.spotlight-card--soft .spotlight-body-list {
+  color: var(--text);
+}
+
+.spotlight-body-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.spotlight-body-list li::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin-top: 7px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.85;
+  flex: none;
 }
 
 .page-intro {

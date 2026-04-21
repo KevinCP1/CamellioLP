@@ -45,8 +45,7 @@ export default function HomePage() {
           </div>
 
           <div className="choice-grid">
-            <article className="choice-card">
-              <span className="section-label">Opción 1</span>
+            <article className="choice-card choice-card--center">
               <h2>Empleado</h2>
               <p>
                 Crea tu perfil, muestra tu trabajo y recibe solicitudes de clientes cerca de ti.
@@ -56,8 +55,7 @@ export default function HomePage() {
               </Link>
             </article>
 
-            <article className="choice-card">
-              <span className="section-label">Opción 2</span>
+            <article className="choice-card choice-card--center">
               <h2>Empleador</h2>
               <p>
                 Encuentra técnicos confiables, compara perfiles y contacta al trabajador adecuado.
