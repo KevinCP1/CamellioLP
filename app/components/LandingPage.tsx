@@ -333,7 +333,7 @@ export function LandingPage({ content }: LandingPageProps) {
                     </svg>
                   ))}
                 </div>
-                <p className="text-slate-700 mb-4 italic">"{t.quote}"</p>
+                <p className="text-slate-700 mb-4 italic">&quot;{t.quote}&quot;</p>
                 <p className="font-semibold text-slate-900">{t.name}</p>
                 <p className="text-sm text-slate-500">{t.role}</p>
               </div>
