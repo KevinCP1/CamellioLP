@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, MapPin, Shield, TrendingUp, Wrench, Home as HomeIcon, ArrowRight } from "lucide-react";
+import { sharedBrandLink } from "./content";
 
 export default function HomePage() {
   return (
@@ -8,7 +9,7 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex flex-wrap justify-between items-center gap-3 py-2 sm:py-0 sm:h-16">
             <Link href="/" className="flex items-center space-x-2">
               <Image
                 src="/camellio-logo.jpg"
@@ -35,13 +36,13 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <button className="hidden md:block px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <Link href={sharedBrandLink} target="_blank" rel="noreferrer" className="hidden md:block px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors whitespace-nowrap">
                 Iniciar sesión
-              </button>
-              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all">
+              </Link>
+              <Link href={sharedBrandLink} target="_blank" rel="noreferrer" className="px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 !text-white visited:!text-white text-xs sm:text-sm font-medium rounded-lg hover:shadow-lg transition-all whitespace-nowrap">
                 Comenzar gratis
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -96,7 +97,7 @@ export default function HomePage() {
                 </p>
                 <Link
                   href="/empleado"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-medium rounded-lg hover:shadow-lg transition-all"
+                  className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-500 !text-white visited:!text-white font-medium rounded-lg hover:shadow-lg transition-all"
                 >
                   Ir a empleado
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -196,7 +197,7 @@ export default function HomePage() {
             <Link href="/empleado" className="w-full sm:w-auto px-8 py-4 bg-white text-blue-600 font-medium rounded-lg hover:shadow-xl transition-all text-center">
               Crear perfil como técnico
             </Link>
-            <Link href="/empleador" className="w-full sm:w-auto px-8 py-4 bg-blue-700 text-white font-medium rounded-lg border-2 border-white/20 hover:bg-blue-800 transition-all text-center">
+            <Link href="/empleador" className="w-full sm:w-auto px-8 py-4 bg-blue-700 !text-white visited:!text-white font-medium rounded-lg border-2 border-white/20 hover:bg-blue-800 transition-all text-center">
               Buscar un técnico
             </Link>
           </div>
@@ -209,7 +210,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Image src="/camellio-logo.jpg" alt="Camellio" width={28} height={28} className="rounded-lg" />
+                <Image src="/Camellio pie de pagina.jpg" alt="Camellio" width={28} height={28} className="rounded-lg" />
                 <span className="text-xl font-bold">Camellio</span>
               </div>
               <p className="text-slate-400 text-sm">Conectamos talento con oportunidades</p>

@@ -37,9 +37,9 @@ export const employeeLanding: LandingContent = {
   heroSubtitle:
     "Camellio es un uber hiperlocal de servicios técnicos con reputación territorial, donde arrendamos tu disponibilidad para conectarte con clientes reales cerca de ti.",
   primaryCta: "Empieza a trabajar hoy",
-  primaryHref: "#como-funciona",
+  primaryHref: sharedBrandLink,
   secondaryCta: "Ver cómo funciona",
-  secondaryHref: "#faq",
+  secondaryHref: "#como-funciona",
   appLinkText: "Abrir la aplicación de Camellio",
   introTitle: "Qué es Camellio para ti",
   introBody:
@@ -129,9 +129,9 @@ export const employerLanding: LandingContent = {
   heroSubtitle:
     "Camellio es un uber hiperlocal de servicios técnicos con reputación territorial, donde encuentras trabajadores verificados cerca de ti.",
   primaryCta: "Buscar técnico ahora",
-  primaryHref: "#como-funciona",
+  primaryHref: sharedBrandLink,
   secondaryCta: "Publicar solicitud",
-  secondaryHref: "#faq",
+  secondaryHref: sharedBrandLink,
   appLinkText: "Abrir la aplicación de Camellio",
   introTitle: "Qué es Camellio para ti",
   introBody:

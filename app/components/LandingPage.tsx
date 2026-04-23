@@ -3,9 +3,9 @@ import Link from "next/link";
 import {
   Sparkles, MapPin, Shield, Star, Award, Camera, MessageSquare,
   DollarSign, Calendar, Wrench, Home as HomeIcon, ArrowRight,
-  Eye, CheckCircle, Filter, Target, Search, Users, Briefcase
+  Eye, CheckCircle, Filter, Target, Search
 } from "lucide-react";
-import { type LandingContent } from "../content";
+import { sharedBrandLink, type LandingContent } from "../content";
 
 type LandingPageProps = {
   content: LandingContent;
@@ -17,7 +17,7 @@ function Nav({ roleName }: { roleName: string }) {
   return (
     <nav className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex flex-wrap justify-between items-center gap-3 py-2 sm:py-0 sm:h-16">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/camellio-logo.jpg"
@@ -40,39 +40,39 @@ function Nav({ roleName }: { roleName: string }) {
               href="/empleado"
               className={`flex items-center space-x-1 text-sm font-medium transition-colors ${isEmployee ? "text-blue-600" : "text-slate-600 hover:text-blue-600"}`}
             >
-              <Users className="w-4 h-4" />
+              <Wrench className="w-4 h-4" />
               <span>Para Técnicos</span>
             </Link>
             <Link
               href="/empleador"
               className={`flex items-center space-x-1 text-sm font-medium transition-colors ${!isEmployee ? "text-blue-600" : "text-slate-600 hover:text-blue-600"}`}
             >
-              <Briefcase className="w-4 h-4" />
+              <HomeIcon className="w-4 h-4" />
               <span>Para Clientes</span>
             </Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <button className="hidden md:block px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <Link href={sharedBrandLink} target="_blank" rel="noreferrer" className="hidden md:block px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors whitespace-nowrap">
               Iniciar sesión
-            </button>
-            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all whitespace-nowrap">
+            </Link>
+            <Link href={sharedBrandLink} target="_blank" rel="noreferrer" className="px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 !text-white visited:!text-white text-xs sm:text-sm font-medium rounded-lg hover:shadow-lg transition-all whitespace-nowrap">
               Comenzar gratis
-            </button>
+            </Link>
           </div>
         </div>
 
         <div className="md:hidden flex items-center space-x-2 pb-3 pt-2">
           <Link
             href="/empleado"
-            className={`flex-1 flex items-center justify-center space-x-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${isEmployee ? "bg-blue-100 text-blue-600" : "text-slate-600 hover:bg-slate-100"}`}
+            className={`flex-1 flex items-center justify-center space-x-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${isEmployee ? "bg-blue-600 text-white" : "text-slate-600 hover:bg-slate-100"}`}
           >
             <Wrench className="w-4 h-4" />
             <span>Técnicos</span>
           </Link>
           <Link
             href="/empleador"
-            className={`flex-1 flex items-center justify-center space-x-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${!isEmployee ? "bg-blue-100 text-blue-600" : "text-slate-600 hover:bg-slate-100"}`}
+            className={`flex-1 flex items-center justify-center space-x-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${!isEmployee ? "bg-blue-600 text-white" : "text-slate-600 hover:bg-slate-100"}`}
           >
             <HomeIcon className="w-4 h-4" />
             <span>Clientes</span>
@@ -85,6 +85,8 @@ function Nav({ roleName }: { roleName: string }) {
 
 export function LandingPage({ content }: LandingPageProps) {
   const isEmployee = content.roleName.toLowerCase() === "empleado";
+  const isPrimaryExternal = content.primaryHref.startsWith("http");
+  const isSecondaryExternal = content.secondaryHref.startsWith("http");
 
   // Hero background — ambos azul pero con tinte diferente
   const heroBg = isEmployee
@@ -153,12 +155,16 @@ export function LandingPage({ content }: LandingPageProps) {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href={content.primaryHref}
-                  className={`px-8 py-3 bg-gradient-to-r ${primaryBtn} text-white font-medium rounded-lg hover:shadow-xl transition-all text-center`}
+                  target={isPrimaryExternal ? "_blank" : undefined}
+                  rel={isPrimaryExternal ? "noreferrer" : undefined}
+                  className={`px-8 py-3 bg-gradient-to-r ${primaryBtn} !text-white visited:!text-white font-medium rounded-lg hover:shadow-xl transition-all text-center`}
                 >
                   {content.primaryCta}
                 </Link>
                 <Link
                   href={content.secondaryHref}
+                  target={isSecondaryExternal ? "_blank" : undefined}
+                  rel={isSecondaryExternal ? "noreferrer" : undefined}
                   className="px-8 py-3 bg-white text-slate-900 font-medium rounded-lg border-2 border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all text-center"
                 >
                   {content.secondaryCta}
@@ -444,7 +450,7 @@ export function LandingPage({ content }: LandingPageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Image src="/camellio-logo.jpg" alt="Camellio" width={28} height={28} className="rounded-lg" />
+                <Image src="/Camellio pie de pagina.jpg" alt="Camellio" width={28} height={28} className="rounded-lg" />
                 <span className="text-xl font-bold">Camellio</span>
               </div>
               <p className="text-slate-400 text-sm">Conectamos talento con oportunidades</p>
