@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${headingFont.variable} ${bodyFont.variable}`}>
+      <body className={`${headingFont.variable} ${bodyFont.variable} bg-gradient-to-b from-slate-50 to-slate-100 min-h-screen`}>
         {children}
       </body>
     </html>
