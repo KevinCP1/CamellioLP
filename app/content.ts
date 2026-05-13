@@ -28,7 +28,7 @@ export type LandingContent = {
   finalHref: string;
 };
 
-export const sharedBrandLink = "https://camellio.netlify.app/";
+export const sharedBrandLink = "https://camellio-app.vercel.app/";
 
 export const employeeLanding: LandingContent = {
   roleLabel: "Para trabajadores",
